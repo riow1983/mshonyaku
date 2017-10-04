@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+  <body>
+
+
+    <form action = "/forward/"  method = "POST">
+      <h3>UKB Translator</h3>
+      
+      Input form<br>
+      <textarea class="form-control" rows="10" name =  "inputform"></textarea><br>
+      <input type="submit" value="Translate to Japanese" name="tl">
+      <input type="submit" value="英語に翻訳する" name="tl"><br>
+
+      Output<br>
+      <!--
+      <textarea class="form-control" rows="10" name = "outputform" id = "outputform" ></textarea><br>
+      -->
+      <div name = "outputform">
+       {{ original|safe }}<br>
+       <br>
+      {{ translated|safe }}
+      </div>
+
+    </form>
+  
+<!--
+  <script >
+  var putvalue = function () {
+    document.getElementById("outputform").value =  {{ translated }};
+  }
+  </script>
+  -->
+  
+<a href = "/db">go to Database</a>
+
+  </body>
+</html>
