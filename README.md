@@ -1,0 +1,3 @@
+# mshonyaku
+
+Microsoft Translator Text APIのTranslateメソッドとAddtranslationメソッドをPythonから使えるように実装しました。
