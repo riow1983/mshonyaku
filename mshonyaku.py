@@ -4,10 +4,10 @@ import requests
 import urllib.request
 
 api_url = "https://api.microsofttranslator.com/V2/Http.svc/"
-client_secret1 = "319660f0d6164c5fb8f91e2cb54101f5"
-client_secret2 = "489da5a7b84a40cba92c75fdeaf3af01"
-user = "riow1983"
-rating = 10
+client_secret1 = "YOUR_SECRET_KEY1"
+client_secret2 = "YOUR_SECRET_KEY2" # you can choose whichever you like
+user = "YOUR_USER_NAME" # whatever you like
+rating = 10 # You can choose between -10 to 10
 
 def translate(textToTranslate=None, fromLangCode=None, toLangCode=None):
     auth_client = AzureAuthClient(client_secret1)
