@@ -8,6 +8,7 @@ client_secret1 = "YOUR_SECRET_KEY1"
 client_secret2 = "YOUR_SECRET_KEY2" # you can choose whichever you like
 user = "YOUR_USER_NAME" # whatever you like
 rating = 10 # You can choose between -10 to 10
+category = "generalnn" # default is "general", but to be more accurate you should choose "generalnn"
 
 def translate(textToTranslate=None, fromLangCode=None, toLangCode=None):
     auth_client = AzureAuthClient(client_secret1)
@@ -16,7 +17,7 @@ def translate(textToTranslate=None, fromLangCode=None, toLangCode=None):
     headers = {"Authorization": finalToken}
     
     textToTranslate = urllib.request.quote(textToTranslate)
-    translateUrl = api_url + "Translate?text={}&from={}&to={}".format(textToTranslate, fromLangCode, toLangCode)
+    translateUrl = api_url + "Translate?text={}&from={}&to={}&category={}".format(textToTranslate, fromLangCode, toLangCode, category)
     translationData = requests.get(translateUrl, headers=headers)
     translation = ElementTree.fromstring(translationData.text.encode('utf-8'))
     
